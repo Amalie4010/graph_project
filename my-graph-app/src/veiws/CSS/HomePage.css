@@ -1,0 +1,12 @@
+#minecraftLogo {
+    justify-self: center;
+    width: 70%;
+    max-width: 30rem;
+    margin-top: 5rem;
+}
+
+input {
+    width: 70%;
+    max-width: 20rem;
+    margin-top: 2rem;
+}

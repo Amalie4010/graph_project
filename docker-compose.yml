@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mysql
+    container_name: minecraftDB
+    environment:
+      MYSQL_DATABASE: minecraft
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api:
+    build:
+      context: ./MyApi
+      dockerfile: Dockerfile
+    container_name: minecraftApi
+    ports:
+      - "5140:8080"
+    depends_on:
+    - db
+
+  frontend:
+    build:
+      context: ./my-graph-app
+      dockerfile: Dockerfile
+    container_name: minecraftFrontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./my-graph-app:/app
+      - /app/node_modules
+    depends_on:
+      - api
+
+volumes:
+  db_data:

@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS Server (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    address VARCHAR(255) NOT NULL UNIQUE,
+    playerMax INT
+);
+
+CREATE TABLE IF NOT EXISTS Status (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    serverId INT NOT NULL,
+    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    playerAmount INT NOT NULL,
+    FOREIGN KEY (serverId) REFERENCES Server(id) ON DELETE CASCADE
+);
+
+INSERT INTO Server (address, playerMax)
+VALUES ('play.hypixel.net', 12);

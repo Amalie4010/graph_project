@@ -1,0 +1,32 @@
+@MyApi_HostAddress = http://localhost:5140
+
+GET {{MyApi_HostAddress}}/server/addresses
+Accept: application/json
+
+###
+
+GET {{MyApi_HostAddress}}/server/data/1
+Accept: application/json
+
+###
+
+GET {{MyApi_HostAddress}}/server/info/1
+Accept: application/json
+
+###
+
+POST {{MyApi_HostAddress}}/server
+Content-Type: application/json
+{
+  "address": "bee.mc-complex.com"
+}
+
+###
+
+PUT {{MyApi_HostAddress}}/server
+
+###
+
+DELETE {{MyApi_HostAddress}}/server/3
+
+###

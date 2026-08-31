@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Minecraft;
+    src: url(assets/Minecraft.ttf);
+}
+
+body {
+  margin: 0;
+}
+
+button {
+    font-family: Minecraft;
+}
+
+input {
+    font-family: Minecraft;
+}
+
+p {
+    font-family: Minecraft;
+    margin: .3rem;
+}

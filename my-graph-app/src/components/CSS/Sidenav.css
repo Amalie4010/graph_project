@@ -1,0 +1,22 @@
+div#sideNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 10rem;
+    /* background-color: sienna; */
+    background-image: url("../../assets/sign.png");
+    margin: 0;
+    /* border-style: solid; */
+    box-shadow: 10px 10px black;
+}
+
+#sideNav button {
+    width: 10rem;
+    padding: .5rem;
+    text-align: left;
+    background: rgba(0,0,0,0);
+    border: none;
+}
+
+
